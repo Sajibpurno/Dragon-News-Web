@@ -9,7 +9,12 @@ const RightSidebar = () => {
         const data = await authClient.signIn.social({
         provider: "google",
   });
-  console.log(data, 'data');
+  };
+    const handleGithubSignin = async() => {
+        const data = await authClient.signIn.social({
+        provider: "github",
+  });
+//   console.log(data, 'data');
   
     }
     return (
@@ -17,7 +22,7 @@ const RightSidebar = () => {
                 <h1 className="font-bold text-lg">Login with</h1>
             <div className="mt-3 flex flex-col gap-2">
             <button className="btn btn-outline btn-primary " onClick={handleGoogleSignin}><FaGoogle />Login with Google</button>
-            <button className="btn btn-outline btn-success"><FaGithub />Login with Github</button>
+            <button className="btn btn-outline btn-success" onClick={handleGithubSignin}><FaGithub />Login with Github</button>
             </div>
 
             <div className="mt-5 flex flex-col">
